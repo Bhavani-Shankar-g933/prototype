@@ -1,8 +1,11 @@
 import pandas as pd
 import joblib
+from pathlib import Path
 
-model_path = r"C:\Users\bhava\OneDrive\Desktop\prototype\Models\Model objects\churn_xgb_model.pkl"
-encoder_path = r"C:\Users\bhava\OneDrive\Desktop\prototype\Models\Model objects\label_encoder.pkl"
+BASE_DIR = Path(__file__).resolve().parent
+
+model_path = BASE_DIR / "Models" / "Modelobjects" / "churn_xgb_model.pkl"
+encoder_path = BASE_DIR / "Models" / "Modelobjects" / "label_encoder.pkl"
 
 # Load once
 churn_model = joblib.load(model_path)
